@@ -13,6 +13,6 @@ You need to configure this in the desktop app:
 Steam>Settings>Web Browser>Web Browser home page
 
 Copy and paste this link there:
-[https://ladju1109.github.io/](https://ladju1109.github.io/)
+[https://ladju1109.github.io/Steam-Web-Browser-Bookmarks/](https://ladju1109.github.io/Steam-Web-Browser-Bookmarks/)
 
 Save the changes, and enjoy!
