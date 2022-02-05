@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Steam Web Browser Bookmarks</title>
+   <link rel="stylesheet" href="css/w3.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <style>
+      body,h1,h2,h3,h4,h5,h6,p {font-family: sans-serif}
+      .w3-bar,h1,button {font-family: sans-serif}
+   </style>
+   <meta name="author" content="ladju1109">
+   <meta name=description content="This webpage allows saving and open your favorites websites while using Steam interface">
+   <meta name=keywords content="Steam, Web Browser, Bookmarks, Steam interface">
+
+   <body class="w3-theme">
+      <!-- Navbar -->
+      <div class="w3-top">
+         <div class="w3-bar w3-theme-dark w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-light-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white"><i class="fa fa-home"></i> Home</a>
+            <a href="https://www.google.com" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"><i class="fa fa-google"></i> Google</a>
+<!--             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a> -->
+         </div>
+         <!-- Navbar on small screens -->
+         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="https://www.google.com" target="_blank" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-google"></i> Google</a>
+<!--             <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a> -->
+         </div>
+      </div>
+      <!-- First Grid -->
+      <div class="w3-row-padding w3-padding-64 w3-container">
+         <div class="w3-content">
+            <div class="w3-row">
+               <div class="w3-container w3-half w3-margin-bottom">
+                  <form class="w3-container w3-card-4 w3-light-grey w3-round">
+                     <p><label>Notes</label>
+                        <textarea id="notes" class="w3-input w3-border" style="resize:none" spellcheck="false" data-gramm="false" cols="30" rows="5" autofocus=""></textarea>
+                     </p>
+                     <div class="w3-bar w3-margin-bottom w3-round">
+                        <button id="buttonsavenotes" class="w3-bar-item w3-button w3-theme-dark" style="width:100%">Save</button>
+                     </div>
+                     <p>
+                        <label>Mode</label>
+                        <select id="open_mode" class="w3-select w3-border" name="option">
+                           <option value="" disabled selected>Choose your option</option>
+                           <option value="1">Open the URL in a background tab (default)</option>
+                           <option value="2">Open the URL in the same frame</option>
+                           <option value="3">Open the URL in a new frame</option>
+                        </select>
+                     </p>
+                     <p><label>URL</label>
+                        <input id="url" class="w3-input w3-border" name="first" type="url">
+                     </p>
+                     <div class="w3-bar w3-margin-bottom w3-round">
+                        <button id="buttongoto" class="w3-bar-item w3-button w3-theme-dark" style="width:100%">Go to</button>
+                     </div>
+                  </form>
+               </div>
+               <div class="w3-container w3-half">
+                  <form class="w3-container w3-margin-bottom w3-card-4 w3-light-grey w3-round">
+                     <p><label>First Favorite URL</label>
+                        <input id="favoriteurl1" class="w3-input w3-border" name="first" type="url">
+                     </p>
+                     <div class="w3-bar w3-margin-bottom w3-round">
+                        <button id="buttongoto1" class="w3-bar-item w3-button w3-theme-dark" style="width:100%">Go to</button>
+                     </div>
+                     <p><label>Second Favorite URL</label>
+                        <input id="favoriteurl2" class="w3-input w3-border" name="last" type="url">
+                     </p>
+                     <div class="w3-bar w3-margin-bottom w3-round">
+                        <button id="buttongoto2" class="w3-bar-item w3-button w3-theme-dark" style="width:100%">Go to</button>
+                     </div>
+                     <p><label>Third Favorite URL</label>
+                        <input id="favoriteurl3" class="w3-input w3-border" name="last" type="url">
+                     </p>
+                     <div class="w3-bar w3-margin-bottom w3-round">
+                        <button id="buttongoto3" class="w3-bar-item w3-button w3-theme-dark" style="width:100%">Go to</button>
+                     </div>
+                     <div class="w3-bar w3-round">
+                        <button id="buttonsaveall" class="w3-bar-item w3-button w3-theme-dark" style="width:100%">Save Update</button>
+                     </div>
+                     <p><label>© ladju1109 | 2022</label></p>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Scripts -->
+      <script>
+         // Used to toggle the menu on small screens when clicking on the menu button
+         function myFunction() {
+           var x = document.getElementById("navDemo");
+           if (x.className.indexOf("w3-show") == -1) {
+             x.className += " w3-show";
+           } else { 
+             x.className = x.className.replace(" w3-show", "");
+           }
+         }
+      </script>
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="js/main.min.js"></script>
+   </body>
+</html>
